@@ -31,3 +31,8 @@ jobs:
       
       - name: Setup .NET Core @ Latest
         uses: actions/setup-dotnet@v1
+        
+      - name: Restore Dependencies
+        run: cd BasicMath && dotnet restore
+        
+       
