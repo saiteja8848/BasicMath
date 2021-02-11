@@ -38,4 +38,7 @@ jobs:
       - name: Run Build
         run: cd BasicMath && dotnet build
         
+      - name: Run Tests
+        run: cd BasicMathTest && dotnet test
+        
        
