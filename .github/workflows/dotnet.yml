@@ -18,7 +18,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 4.7.5
+        dotnet-version: 3.1.x
     
     - name: Restore dependencies
       run: cd BasicMath && dotnet restore
