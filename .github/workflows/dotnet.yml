@@ -1,31 +1,33 @@
-name: .NET
-
+name: CI
+ 
 on:
+  
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
 
+ 
   workflow_dispatch:
 
-jobs:
-  build:
 
-    runs-on: ubuntu-latest
+jobs:
+  
+  build:
+    
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest,windows-2016]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 4.6.1
-    
-    - name: Restore dependencies
-      run: cd BasicMath && dotnet restore
-    
-    - name: Build
-      run: cd BasicMath && dotnet build 
+      - uses: actions/checkout@v2
+
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1
       
+      - name: Setup VSTest Path
+        uses: darenm/Setup-VSTest@v1
       
-    - name: Test
-      run: cd BasicMath && cd BasicMathTest dotnet test 
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1
