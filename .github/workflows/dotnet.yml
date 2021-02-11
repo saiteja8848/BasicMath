@@ -18,13 +18,14 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 2.1.520
+    
     - name: Restore dependencies
-      run: dotnet restore
+      run: cd BasicMath && dotnet restore
     
     - name: Build
-      run: dotnet build --no-restore
+      run: cd BasicMath && dotnet build 
       
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: cd BasicMath && cd BasicMathTest dotnet test 
