@@ -36,6 +36,6 @@ jobs:
         run: cd BasicMath && dotnet restore
         
       - name: Run Build
-        run: dotnet build
+        run: cd BasicMath && dotnet build
         
        
