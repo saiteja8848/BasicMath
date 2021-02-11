@@ -12,7 +12,7 @@ namespace BasicMathTest
         {
             BasicMaths bm = new BasicMaths();
             double res = bm.Add(10, 10);
-            Assert.AreEqual(res, 20);
+            Assert.AreEqual(res, 30);
         }
         [TestMethod]
         public void Test_SubstractMethod()
