@@ -39,6 +39,6 @@ jobs:
         run: cd BasicMath && dotnet build
         
       - name: Run Tests
-        run: cd BasicMathTest && dotnet test
+        run: cd BasicMath && cd BasicMathTest && dotnet test
         
        
